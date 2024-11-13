@@ -1,0 +1,107 @@
+nav {
+    display: flex;
+    /* Use flexbox for layout */
+    align-items: center;
+    /* Center items vertically */
+    background-color: black;
+    /* Optional: background color */
+    padding: 10px 20px;
+    /* Optional: padding */
+}
+
+.logo {
+    height: 50px;
+    /* Adjust height as needed */
+    margin-right: 20px;
+    /* Space between logo and navbar */
+}
+
+.toggle-button {
+    display: none;
+    /* Hidden by default */
+    background-color: #333;
+    /* Button background color */
+    color: white;
+    /* Button text color */
+    border: none;
+    /* Remove default border */
+    padding: 10px 15px;
+    /* Button padding */
+    cursor: pointer;
+    /* Pointer cursor on hover */
+}
+
+/* Navbar links */
+.navbar {
+    list-style-type: none;
+    /* Remove default list styling */
+    padding: 0;
+    /* Remove default padding */
+    margin: 0;
+    /* Remove default margin */
+    display: flex;
+    /* Use flexbox for the navbar */
+    flex-grow: 1;
+    /* Allow navbar to grow and take available space */
+    justify-content: center;
+    /* Center the items horizontally */
+    transition: max-height 0.3s ease;
+    /* Smooth transition for expanding */
+    overflow: hidden;
+    /* Hide overflowing items */
+}
+
+/* Navbar items */
+.navbar li {
+    margin: 0 15px;
+    /* Add some space between items */
+}
+
+.navbar a {
+    text-decoration: none;
+    /* Remove underline from links */
+    color: wheat;
+    /* Change link color */
+}
+
+/* Position Contact link at the end */
+.navbar .contact {
+    margin-left: auto;
+    /* Push the Contact link to the end */
+}
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+    .toggle-button {
+        display: block;
+        /* Show the toggle button on mobile */
+    }
+
+    .navbar {
+        flex-direction: column;
+        /* Stack navbar items vertically */
+        align-items: center;
+        /* Center items */
+        max-height: 0;
+        /* Start with hidden navbar */
+        visibility: hidden;
+        /* Hide navbar */
+    }
+
+    .navbar.open {
+        max-height: 300px;
+        /* Adjust based on expected number of items */
+        visibility: visible;
+        /* Show navbar */
+    }
+
+    .navbar li {
+        margin: 10px 0;
+        /* Add vertical space between items */
+    }
+
+    .navbar .contact {
+        margin-left: 0;
+        /* Remove margin-left for mobile */
+    }
+}

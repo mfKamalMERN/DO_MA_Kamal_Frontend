@@ -9,29 +9,25 @@ import Typography from '@mui/material/Typography';
 import ImageListItem from '@mui/material/ImageListItem';
 import ImageList from '@mui/material/ImageList';
 import { Localization } from "../Localization/Localization";
-import style from '../Styles/Welcome.module.css'
+import style from '../Styles/Welcome.module.css';
 
 export const Welcome = () => {
     return (
         <>
             <Navbar />
-            {/* <h1 className={styles.welcomesheet}>Welcome</h1> */}
-            
             <div className={style.content}>
-
-                <Card sx={{ maxWidth: 354, marginLeft:"2%" }}>
+                <Card className={style.card}>
                     <CardMedia
-                        sx={{ height: 250 }}
-                        image="https://etimg.etb2bimg.com/photo/95643096.cms"
+                        sx={{ height: 210 }}
+                        image="https://i.pinimg.com/550x/5a/da/c8/5adac811e0c915f7b9d9c0cacd3839be.jpg"
                         title="green iguana"
                     />
                     <CardContent>
                         <Typography gutterBottom variant="h5" component="div">
-                            Lizard
+                            L.I.C
                         </Typography>
                         <Typography variant="body2" sx={{ color: 'text.secondary' }}>
-                            Lizards are a widespread group of squamate reptiles, with over 6,000
-                            species, ranging across all continents except Antarctica
+                            सफलता का रहस्य यह है कि आप खुद पर विश्वास करें, और किसी भी हालत में हार न मानें।
                         </Typography>
                     </CardContent>
                     <CardActions>
@@ -40,7 +36,7 @@ export const Welcome = () => {
                 </Card>
 
                 <div className={style.lists}>
-                    <ImageList sx={{ width: 500, height: 450 }} cols={3} rowHeight={164}>
+                    <ImageList className={style.imagelist} cols={3} rowHeight={164}>
                         {Localization.itemData.map((item) => (
                             <ImageListItem key={item.img}>
                                 <img

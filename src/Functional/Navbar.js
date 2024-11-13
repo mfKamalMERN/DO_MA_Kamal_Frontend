@@ -3,15 +3,15 @@ import { Navbar as Navbarr } from '../Presentational/Navbar.jsx'
 import { Localization } from '../Localization/Localization.js'
 
 const Navbar = () => {
-    const [value, setValue] = useState('')
+    const [isOpen, setIsOpen] = useState(false); // State to manage navbar visibility
+
+    const toggleNavbar = () => {
+        setIsOpen(!isOpen); // Toggle the state
+    };
 
     const NavTabs = Localization.NavTabs;
 
-    const handleChange = (e) => {
-        setValue(e.target.name)
-    }
-
-    return <Navbarr handleChange={handleChange} value={value} NavTabs={NavTabs} />
+    return <Navbarr toggleNavbar={toggleNavbar} NavTabs={NavTabs} isOpen={isOpen} />
 
 }
 

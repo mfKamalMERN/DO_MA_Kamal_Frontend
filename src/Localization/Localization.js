@@ -1,5 +1,5 @@
 export const Localization = {
-    NavTabs: ["Profile", "Achievements", "Experience", "Quotes"],
+    NavTabs: [{ name: "Home" }, { name: "About" }, { name: "Services" }, { name: "Contact", value: { DO: "M.A.Kamal", Phone: "☎️: 9835003820" } }],
     itemData: [
         { img: "https://akm-img-a-in.tosshub.com/aajtak/images/story/202209/lic-sixteen_nine.jpg?size=948:533", title: "LIC" },
 
