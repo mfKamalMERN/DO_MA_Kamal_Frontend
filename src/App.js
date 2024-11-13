@@ -1,10 +1,13 @@
+import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import './App.css';
-import Navbar from './Functional/Navbar';
+import routes from './Routes/Routes';
 
 function App() {
+  const router = createBrowserRouter(routes)
+
   return (
     <div className="App">
-      <Navbar />
+      <RouterProvider router={router} />
     </div>
   );
 }
