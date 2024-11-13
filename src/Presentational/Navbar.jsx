@@ -1,26 +1,25 @@
-import Tab from '@mui/material/Tab';
-import Tabs from '@mui/material/Tabs';
+import React from 'react';
+import '../Styles/Navbar.css'; // Import your CSS file
 
-
-export const Navbar = (props) => {
-
-    const { handleChange, NavTabs } = props;
+const Navbar = (props) => {
+    const { toggleNavbar, NavTabs, isOpen } = props;
 
     return (
-        <div className="Navbar" style={{ backgroundColor: "black", height: "100px", border: "1px solid wheat" }}>
+        <nav>
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSMVxEQ8iS7m8rEPuuU3rqgNtiHD6YLUXtfWw&s" alt="LIC" className="logo" />
 
-            <Tabs
-                variant="scrollable"
-                scrollButtons="auto"
-                aria-label="scrollable auto tabs example"
-            // style={{ border: "1px solid wheat", display: "flex", justifyContent: "center" }}
-            >
-                {NavTabs.map((tab, index) => (
-                    <Tab key={index} label={tab} onClick={handleChange} style={{ color: "wheat", marginTop: "25px", }} />
-                ))}
 
-            </Tabs>
+            <ul className={`navbar ${isOpen ? 'open' : ''}`}>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li className='contact'><a href="#contact">M.A.Kamal <br /> 📞: +91 9835003820</a></li>
+            </ul>
+            <button className="toggle-button" onClick={toggleNavbar}>
+                {isOpen ? 'Close' : 'Menu'} {/* Button text changes based on state */}
+            </button>
+        </nav>
+    );
+};
 
-        </div>
-    )
-}
+export { Navbar };
